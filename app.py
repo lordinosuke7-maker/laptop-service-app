@@ -4,7 +4,7 @@ from datetime import datetime
 import os
 from flask import session
 app = Flask(__name__)
-app.secret_key = "my_super_secret_key_123"   # you can change this
+app.secret_key = os.environ.get("SECRET_KEY","default_secret_key") # you can change this
 
 # SQLite database in the project folder
 basedir = os.path.abspath(os.path.dirname(__file__))
